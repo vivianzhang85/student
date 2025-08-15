@@ -55,7 +55,6 @@ Hi! My name is [Your Full Name].
 
 <p style="color: #2A7DB1;">Open Coding Society: <a href="https://opencodingsociety.com" style="color: #2A7DB1; text-decoration: underline;">Socials</a></p>
 
-<!doctype html>
 <html>
 <head>
   <meta charset="utf-8">
