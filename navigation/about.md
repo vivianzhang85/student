@@ -23,6 +23,4 @@ Fun facts about me:
 
 ### Photo Gallery
 scroll to the right for more
-<div class="image-gallery">
-  <![Photo on 2-28-25 at 7 44 PM #2](https://github.com/user-attachments/assets/0dba7a01-1d42-4937-a35e-f571bf70445d)>
-</div>
+![Photo on 2-28-25 at 7 44 PM #2](https://github.com/user-attachments/assets/cdb474b9-8a7b-4149-9161-9ec1e0ccde93)
