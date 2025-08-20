@@ -5,9 +5,9 @@ permalink: /about/
 comments: true
 ---
 
-## As a conversation Starter
+## Hi I'm Vivian
+Hobbies:
 
-Here are some places I have lived.
 
 <comment>
 Flags are made using Wikipedia images
