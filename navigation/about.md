@@ -22,5 +22,4 @@ Fun facts about me:
 - currently attending DNHS for high school
 
 ### Photo Gallery
-scroll to the right for more
 ![Photo on 2-28-25 at 7 44 PM #2](https://github.com/user-attachments/assets/cdb474b9-8a7b-4149-9161-9ec1e0ccde93)
