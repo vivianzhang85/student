@@ -13,9 +13,6 @@ Fun facts about me:
 - Favorite food: good ramen
 - Favorite subject: science
 
-### Photo Gallery
-![Photo on 2-28-25 at 7 44 PM #2](https://github.com/user-attachments/assets/0dba7a01-1d42-4937-a35e-f571bf70445d)
-
 ### Journey through Life
 
 - born in Atlanta, Georgia
@@ -24,19 +21,10 @@ Fun facts about me:
 - went to OVMS for middle school
 - currently attending DNHS for high school
 
-### Culture, Family, and Fun
-
-Everything for me, as for many others, revolves around family and faith.
-
-- My mother told me that I was Danish, English. and Irish, here is my researched [family tree]({{site.baseurl}}/images/about/familytree.png)
-- My family is pretty big as I have been married twice, my 1st wife passed away.  We have had 5 kids, 4 adopted by me, 1 biological.  Plus, there are three grandkids.  My name to my grandkids is Abuilito.
-- The gallery of pics has some of my family, fun, culture and faith memories.
-
-<comment>
-Gallery of Pics, scroll to the right for more ...
-</comment>
+### Photo Gallery
+scroll to the right for more
 <div class="image-gallery">
-  <img src="{{site.baseurl}}/images/about/missionary.jpg" alt="Image 1">
+  <![Photo on 2-28-25 at 7 44 PM #2](https://github.com/user-attachments/assets/0dba7a01-1d42-4937-a35e-f571bf70445d)>
   <img src="{{site.baseurl}}/images/about/john_tamara.jpg" alt="Image 2">
   <img src="{{site.baseurl}}/images/about/tamara_fam.jpg" alt="Image 3">
   <img src="{{site.baseurl}}/images/about/surf.jpg" alt="Image 4">
