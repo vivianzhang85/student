@@ -5,7 +5,7 @@ permalink: /about/
 comments: true
 ---
 
-## Hi I'm Vivian
+## Hi, I'm Vivian
 Fun facts about me:
 - I have a cat
 - I love to travel
