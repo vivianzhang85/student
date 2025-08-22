@@ -10,7 +10,7 @@ comments: true
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sparkle Text</title>
+  <title>Sparkling Stars Text</title>
   <style>
     body {
       display: flex;
@@ -18,78 +18,83 @@ comments: true
       align-items: center;
       height: 100vh;
       background: black;
-    }
-
-    .sparkle-text {
-      font-size: 3rem;
-      font-weight: bold;
-      color: white;
-      position: relative;
       overflow: hidden;
     }
 
-    /* Shimmer gradient */
-    .sparkle-text::before {
-      content: "Hi, I’m Vivian";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        120deg,
-        transparent 0%,
-        rgba(255, 255, 255, 0.8) 40%,
-        transparent 80%
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: shimmer 2s infinite linear;
+    .sparkle-container {
+      position: relative;
+      display: inline-block;
+      font-size: 3rem;
+      font-weight: bold;
+      color: white;
     }
 
-    /* Sparkle stars */
-    .sparkle {
+    /* Twinkling star base */
+    .star {
       position: absolute;
       width: 6px;
       height: 6px;
       background: white;
+      transform: rotate(45deg);
+      animation: twinkle 2s infinite ease-in-out;
+      opacity: 0.8;
+    }
+
+    /* Star cross arms */
+    .star::before,
+    .star::after {
+      content: "";
+      position: absolute;
+      background: white;
       border-radius: 50%;
-      box-shadow: 0 0 8px white, 0 0 15px yellow;
-      opacity: 0;
-      animation: sparkle 3s infinite;
     }
 
-    @keyframes shimmer {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
+    .star::before {
+      width: 12px;
+      height: 2px;
+      top: 2px;
+      left: -3px;
     }
 
-    @keyframes sparkle {
-      0%, 100% { opacity: 0; transform: scale(0); }
-      50% { opacity: 1; transform: scale(1.5); }
+    .star::after {
+      width: 2px;
+      height: 12px;
+      top: -3px;
+      left: 2px;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(0.8) rotate(45deg); }
+      50% { opacity: 1; transform: scale(1.3) rotate(45deg); }
     }
   </style>
 </head>
 <body>
-  <div class="sparkle-text">Hi, I’m Vivian</div>
+  <div class="sparkle-container">Hi, I’m Vivian</div>
 
   <script>
-    const text = document.querySelector('.sparkle-text');
+    const container = document.querySelector('.sparkle-container');
 
-    // Create random sparkles
-    setInterval(() => {
-      const sparkle = document.createElement('div');
-      sparkle.classList.add('sparkle');
-      sparkle.style.left = Math.random() * text.offsetWidth + 'px';
-      sparkle.style.top = Math.random() * text.offsetHeight + 'px';
-      text.appendChild(sparkle);
-
-      setTimeout(() => sparkle.remove(), 3000);
-    }, 500);
+    // Generate stars randomly around the text
+    for (let i = 0; i < 25; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.left = (Math.random() * 250 - 50) + 'px'; // spread left/right
+      star.style.top = (Math.random() * 120 - 40) + 'px';  // spread up/down
+      star.style.animationDuration = (1 + Math.random() * 2) + 's'; // random twinkle speed
+      star.style.animationDelay = (Math.random() * 2) + 's';
+      container.appendChild(star);
+    }
   </script>
 </body>
 </html>
 
+### Fun facts about me:
+- I have a cat
+- I love to travel
+- I love spending time with my family
+- Favorite food: good ramen
+- Favorite subject: science
 
 ### Journey through Life
 
