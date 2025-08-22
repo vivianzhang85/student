@@ -68,49 +68,6 @@ comments: true
   setInterval(createSparkle, 200);
 </script>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Moving Cat</title>
-  <style>
-    body {
-      background: #f5f5f5;
-      height: 100vh;
-      margin: 0;
-      overflow: hidden;
-      position: relative;
-    }
-    .cat {
-      position: absolute;
-      width: 100px;
-      transition: transform 2s ease;
-    }
-  </style>
-</head>
-<body>
-  <img src="https://i.imgur.com/Jg3U3eG.png" alt="cat" class="cat" id="cat">
-
-  <script>
-    const cat = document.getElementById("cat");
-    const screenW = window.innerWidth;
-    const screenH = window.innerHeight;
-
-    function moveCat() {
-      const x = Math.random() * (screenW - 100);
-      const y = Math.random() * (screenH - 100);
-      cat.style.transform = `translate(${x}px, ${y}px)`;
-    }
-
-    // Move every 2 seconds
-    setInterval(moveCat, 2000);
-
-    // Start somewhere random
-    moveCat();
-  </script>
-</body>
-</html>
-
 ### Fun facts about me:
 - I have a cat
 - I love to travel
