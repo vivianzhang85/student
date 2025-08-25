@@ -68,6 +68,23 @@ comments: true
   setInterval(createSparkle, 200);
 </script>
 
+<div class="float">
+  🎈 🎉 🌸
+</div>
+
+<style>
+.float {
+  font-size: 2rem;
+  animation: floatUp 4s ease-in-out infinite;
+}
+@keyframes floatUp {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+</style>
+
+
 ### Fun facts about me:
 - I have a cat
 - I love to travel
