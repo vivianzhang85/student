@@ -4,6 +4,7 @@ title: About
 permalink: /about/
 comments: true
 ---
+
 <h2 class="sparkle-text">Hi, I'm Vivian</h2>
 
 <style>
