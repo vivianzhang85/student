@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Troubleshooting Guide | Open Coding</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Troubleshooting Guide" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Recovery guide for common issues with GitHub, cloning, virtual environments, and running your website." />
+<meta property="og:description" content="Recovery guide for common issues with GitHub, cloning, virtual environments, and running your website." />
+<meta property="og:site_name" content="Open Coding" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-04-15T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Troubleshooting Guide" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-04-15T00:00:00+00:00","datePublished":"2025-04-15T00:00:00+00:00","description":"Recovery guide for common issues with GitHub, cloning, virtual environments, and running your website.","headline":"Troubleshooting Guide","mainEntityOfPage":{"@type":"WebPage","@id":"/tools/trouble"},"url":"/tools/trouble"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Open Coding" />
+<!-- Minima start custom head snippets -->
+
+<!-- Favicon for browser tabs and bookmarks -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+<!-- Support for Apple devices (iPhone/iPad homescreen icon) -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<!-- Support for modern browsers and pinned tabs -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<!-- Minima end custom head snippets -->
+ </head>
+<body>    <header class="site-header">
+        <div class="wrapper"><a class="site-title" rel="author" href="/" data-value="Open Coding">
+                <img src="/images/logo.png" alt="Logo" style="height: 40px; vertical-align: middle; margin-right: 10px;">
+            </a><nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+                <label for="nav-trigger">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 18 15" width="18px" height="15px">
+                            <path
+                                d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                        </svg>
+                    </span>
+                </label>
+
+                <div class="trigger"><a class="page-link" href="/navigation/section/csse.html">CSSE</a><a class="page-link" href="/navigation/section/csp.html">CSP</a><a class="page-link" href="/navigation/section/csa.html">CSA</a><a class="page-link" href="/navigation/blogs/">Blogs</a><a class="page-link" href="/navigation/search/">Search</a><a id="loginArea" href="/login">Login</a>
+                </div>
+            </nav></div>
+    </header>
+
+    <script type="module" src="/assets/js/api/login.js"></script>    
+<main class="page-content" aria-label="Content">
+            <div class="wrapper">
+                <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    
+      <!-- Locate Parent Path -->
+      
+      
+      <!-- Remove last part of path -->
+      
+      
+      Breadcrumb:
+      <a class="category-tags-link" href="/tools">/tools</a>
+      
+      
+    
+    <p class="post-meta post-meta-title"><time class="dt-published" datetime="2025-04-15T00:00:00+00:00" itemprop="datePublished">
+        Apr 15, 2025
+      </time>• <span class="read-time" title="Estimated read time">
+    
+     1 min read  </span>
+    </p>
+    <br>
+    <h3>Troubleshooting Guide</h3><p class="page-description">Recovery guide for common issues with GitHub, cloning, virtual environments, and running your website.</p></header>
+
+  <div class="post-content e-content" itemprop="articleBody"><ul><li><a href="#-tool-setup-troubleshooting-guide">🔧 Tool Setup Troubleshooting Guide</a></li><li><a href="#github-commit--config-recovery">GitHub Commit / Config Recovery</a></li><li><a href="#directory--clone-recovery">Directory + Clone Recovery</a><ul><li><a href="#navigate">Navigate</a></li><li><a href="#check-for-repo-folder">Check for repo folder</a></li></ul></li><li><a href="#virtual-environment-recovery">Virtual Environment Recovery</a><ul><li><a href="#run-vitual-environment">Run Vitual Environment</a></li></ul></li><li><a href="#vscode-launch-and-memories">VSCode Launch and Memories</a></li></ul><h2 id="-tool-setup-troubleshooting-guide">🔧 Tool Setup Troubleshooting Guide</h2>
+
+<p>Use this page if something is not working.<br />
+Each section is independent — jump directly to the area you are stuck.</p>
+
+<hr />
+
+<h2 id="github-commit--config-recovery">GitHub Commit / Config Recovery</h2>
+
+<p>Use these commands if git commit is failing</p>
+
+<p>✅ <strong>Expectation</strong><br />
+You have a GitHub username + email</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--list</span><span class="sb">`</span> <span class="c"># shows your GitHub username + email.  </span>
+</code></pre></div></div>
+
+<p>❌ <strong>If not working, run:</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--global</span> user.name <span class="s2">"jm1021"</span>        <span class="c"># change to your GitHub ID</span>
+git config <span class="nt">--global</span> user.email <span class="s2">"jm1021@gmail.com"</span>  <span class="c"># change to your Email</span>
+</code></pre></div></div>
+
+<h2 id="directory--clone-recovery">Directory + Clone Recovery</h2>
+
+<p>✅ Expectation
+You can cd into your personal directory, and an ls shows your repo folder (ex: student).</p>
+
+<h3 id="navigate">Navigate</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/jm1021 <span class="c"># change jm1021 to your user directory name</span>
+</code></pre></div></div>
+
+<p>❌ If cd fails, run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> ~/jm1021
+<span class="nb">cd</span> ~/jm1021
+</code></pre></div></div>
+
+<h3 id="check-for-repo-folder">Check for repo folder</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="c"># lshould show "student"</span>
+</code></pre></div></div>
+
+<p>❌ If missing, run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/jm1021/student.git <span class="c"># change to personal location of repo</span>
+</code></pre></div></div>
+
+<h2 id="virtual-environment-recovery">Virtual Environment Recovery</h2>
+
+<p>✅ Expectation
+Your terminal prompt shows (venv) prefix.</p>
+
+<h3 id="run-vitual-environment">Run Vitual Environment</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">source </span>venv/bin/activate
+</code></pre></div></div>
+
+<p>❌ If it fails</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./scripts/venv.sh
+<span class="nb">source </span>venv/bin/activate
+</code></pre></div></div>
+
+<h2 id="vscode-launch-and-memories">VSCode Launch and Memories</h2>
+
+<p>✅ Satisfying the pre-requisites</p>
+
+<ul>
+  <li>In project directory of your repo <code class="language-plaintext highlighter-rouge">pwd</code></li>
+  <li>Sourcing virtual environment <code class="language-plaintext highlighter-rouge">source venv/bin/activate</code></li>
+  <li>Ensure your terminal prompt shows the active virtual environment <code class="language-plaintext highlighter-rouge">(venv)</code>.</li>
+</ul>
+
+<p>You are now ready to load VSCode and build a proper memory to open your project.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>code <span class="nb">.</span>
+</code></pre></div></div>
+
+<p>✅ Verify VSCode launch</p>
+
+<ul>
+  <li>Terminal and presence of <code class="language-plaintext highlighter-rouge">(venv)</code> prompt</li>
+  <li>Open your Jokes IPYNB notebook and select the Python kernel with the <code class="language-plaintext highlighter-rouge">venv</code> prefix.</li>
+</ul>
+
+<p>❌ If you fail verification</p>
+
+<p>You may have opened your repo project without activating the proper <code class="language-plaintext highlighter-rouge">(venv)</code> environment.</p>
+
+<p>Check the <code class="language-plaintext highlighter-rouge">Recent</code> listings. If there are entries that look incorrect or outdated (bad memories), remove them all.</p>
+
+<ul>
+  <li>Shift-Cmd-P (Mac) or Shift-Ctl-P (Windows, KASM)</li>
+  <li>type: Clear Recently Open – select and confirm</li>
+  <li>close VSCode</li>
+  <li>Repeat VSCode Launch and Memories</li>
+</ul>
+
+  </div><a class="u-url" href="/tools/trouble" hidden></a>
+</article>
+
+            </div>
+        </main><footer class="site-footer h-card">
+    <data class="u-url" href="/"></data>
+
+    <!-- <div class="wrapper">
+
+        <div class="social-links"><ul class="social-media-list"><li>
+    <a rel="me" href="" target="_blank" title="">
+      <span class="grey fa-brands fa- fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="" target="_blank" title="">
+      <span class="grey fa-brands fa- fa-lg"></span>
+    </a>
+  </li><li>
+    <a rel="me" href="" target="_blank" title="">
+      <span class="grey fa-brands fa- fa-lg"></span>
+    </a>
+  </li></ul>
+</div>
+
+    </div> -->
+
+    <p style="font-style: italic;">OpenAesthetic v3.0rc1.1</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        mermaid.initialize({ 
+            startOnLoad: false,
+            theme: 'dark',
+            securityLevel: 'loose',
+            themeVariables: {
+                primaryColor: '#1a3a4a',
+                primaryTextColor: '#ffffff',
+                primaryBorderColor: '#2d4a3d',
+                lineColor: '#ffffff',
+                arrowheadColor: '#ffffff'
+            }
+        });
+        
+        // Convert fenced code blocks to mermaid divs
+        document.querySelectorAll('pre code.language-mermaid').forEach((block, index) => {
+            const content = block.textContent;
+            const wrapper = document.createElement('div');
+            wrapper.className = 'mermaid';
+            wrapper.id = 'mermaid-' + index;
+            wrapper.textContent = content;
+            block.parentElement.parentNode.replaceChild(wrapper, block.parentElement);
+        });
+        
+        mermaid.run();
+    });
+</script></body>
+</html>
