@@ -8,7 +8,6 @@ permalink: /background
 ---
 
 <canvas id="world"></canvas>
-mk
 <script>
   const canvas = document.getElementById("world");
   const ctx = canvas.getContext('2d');
