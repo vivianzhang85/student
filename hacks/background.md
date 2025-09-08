@@ -11,11 +11,18 @@ permalink: /background
 <script>
   const canvas = document.getElementById("world");
   const ctx = canvas.getContext('2d');
+  // Setting up image objects
   const backgroundImg = new Image();
+// Setting up image objects for background and player sprite
+const backgroundImg = new Image();
+const spriteImg = new Image();
   const spriteImg = new Image();
-  backgroundImg.src = '{{page.background}}';
-  spriteImg.src = '{{page.sprite}}';
-
+  // Assign image sources from front matter variables
+  // Jekyll assignment of Images
+  backgroundImg.src = '{{page.background}}'; // Background Image
+  spriteImg.src = '{{page.sprite}}'; //Player Image
+// Track loaded images and start the game once both are loaded
+// Image Loading Code Block
   let imagesLoaded = 0;
   backgroundImg.onload = function() {
     imagesLoaded++;
@@ -23,12 +30,15 @@ permalink: /background
   };
   spriteImg.onload = function() {
     imagesLoaded++;
-    startGameWorld();
+   /* Starts the game after images are loaded: - Creates game objects - Sets up game loop */
+   startGameWorld();
+  // Base class for game objects like background and player
   };
-
+/* This block Starts the Game
+| * It checks for all images being loaded before starting 
+*/
   function startGameWorld() {
-    if (imagesLoaded < 2) return;
-
+    if (imagesLoaded < 2) return; // Delays start until everything
     class GameObject {
       constructor(image, width, height, x = 0, y = 0, speedRatio = 0) {
         this.image = image;
@@ -36,6 +46,7 @@ permalink: /background
         this.height = height;
         this.x = x;
         this.y = y;
+        // Background class scrolls the background image horizontally
         this.speedRatio = speedRatio;
         this.speed = GameWorld.gameSpeed * this.speedRatio;
       }
@@ -44,11 +55,11 @@ permalink: /background
         ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
       }
     }
-
     class Background extends GameObject {
       constructor(image, gameWorld) {
         // Fill entire canvas
         super(image, gameWorld.width, gameWorld.height, 0, 0, 0.1);
+      // Player class with floating animation using sine wave
       }
       update() {
         this.x = (this.x - this.speed) % this.width;
@@ -58,13 +69,13 @@ permalink: /background
         ctx.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
       }
     }
-
     class Player extends GameObject {
       constructor(image, gameWorld) {
         const width = image.naturalWidth / 2;
         const height = image.naturalHeight / 2;
         const x = (gameWorld.width - width) / 2;
         const y = (gameWorld.height - height) / 2;
+        // Main game controller managing canvas and game loop
         super(image, width, height, x, y);
         this.baseY = y;
         this.frame = 0;
@@ -74,7 +85,6 @@ permalink: /background
         this.frame++;
       }
     }
-
     class GameWorld {
       static gameSpeed = 5;
       constructor(backgroundImg, spriteImg) {
@@ -89,7 +99,6 @@ permalink: /background
         this.canvas.style.position = 'absolute';
         this.canvas.style.left = `0px`;
         this.canvas.style.top = `${(window.innerHeight - this.height) / 2}px`;
-
         this.objects = [
          new Background(backgroundImg, this),
          new Player(spriteImg, this)
@@ -103,11 +112,11 @@ permalink: /background
         }
         requestAnimationFrame(this.gameLoop.bind(this));
       }
+      // Initialize and start the game world
       start() {
         this.gameLoop();
       }
     }
-
     const world = new GameWorld(backgroundImg, spriteImg);
     world.start();
   }
