@@ -3,7 +3,7 @@ layout: base
 title: Background with Object
 description: Use JavaScript to have an in motion background.
 sprite: images/platformer/sprites/flying-ufo.png
-background: images/platformer/backgrounds/catbackground.png
+background: images/platformer/backgrounds/pyramids.png
 permalink: /background
 ---
 
@@ -11,18 +11,12 @@ permalink: /background
 <script>
   const canvas = document.getElementById("world");
   const ctx = canvas.getContext('2d');
-  // Setting up image objects
+  // Setting up image objects (remove duplicates)
   const backgroundImg = new Image();
-// Setting up image objects for background and player sprite
-const backgroundImg = new Image();
-const spriteImg = new Image();
   const spriteImg = new Image();
   // Assign image sources from front matter variables
-  // Jekyll assignment of Images
-  backgroundImg.src = '{{page.background}}'; // Background Image
-  spriteImg.src = '{{page.sprite}}'; //Player Image
-// Track loaded images and start the game once both are loaded
-// Image Loading Code Block
+  backgroundImg.src = '{{ page.background }}'; // Background Image
+  spriteImg.src = '{{ page.sprite }}'; // Player Image
   let imagesLoaded = 0;
   backgroundImg.onload = function() {
     imagesLoaded++;
@@ -30,15 +24,10 @@ const spriteImg = new Image();
   };
   spriteImg.onload = function() {
     imagesLoaded++;
-   /* Starts the game after images are loaded: - Creates game objects - Sets up game loop */
-   startGameWorld();
-  // Base class for game objects like background and player
+    startGameWorld();
   };
-/* This block Starts the Game
-| * It checks for all images being loaded before starting 
-*/
   function startGameWorld() {
-    if (imagesLoaded < 2) return; // Delays start until everything
+    if (imagesLoaded < 2) return;
     class GameObject {
       constructor(image, width, height, x = 0, y = 0, speedRatio = 0) {
         this.image = image;
@@ -46,7 +35,6 @@ const spriteImg = new Image();
         this.height = height;
         this.x = x;
         this.y = y;
-        // Background class scrolls the background image horizontally
         this.speedRatio = speedRatio;
         this.speed = GameWorld.gameSpeed * this.speedRatio;
       }
@@ -57,9 +45,7 @@ const spriteImg = new Image();
     }
     class Background extends GameObject {
       constructor(image, gameWorld) {
-        // Fill entire canvas
         super(image, gameWorld.width, gameWorld.height, 0, 0, 0.1);
-      // Player class with floating animation using sine wave
       }
       update() {
         this.x = (this.x - this.speed) % this.width;
@@ -75,7 +61,6 @@ const spriteImg = new Image();
         const height = image.naturalHeight / 2;
         const x = (gameWorld.width - width) / 2;
         const y = (gameWorld.height - height) / 2;
-        // Main game controller managing canvas and game loop
         super(image, width, height, x, y);
         this.baseY = y;
         this.frame = 0;
@@ -88,20 +73,18 @@ const spriteImg = new Image();
     class GameWorld {
       static gameSpeed = 5;
       constructor(backgroundImg, spriteImg) {
-        this.canvas = document.getElementById("world");
-        this.ctx = this.canvas.getContext('2d');
+        this.canvas = canvas;
+        this.ctx = ctx;
         this.width = window.innerWidth;
         this.height = window.innerHeight;
         this.canvas.width = this.width;
         this.canvas.height = this.height;
-        this.canvas.style.width = `${this.width}px`;
-        this.canvas.style.height = `${this.height}px`;
         this.canvas.style.position = 'absolute';
-        this.canvas.style.left = `0px`;
-        this.canvas.style.top = `${(window.innerHeight - this.height) / 2}px`;
+        this.canvas.style.left = '0px';
+        this.canvas.style.top = '0px';
         this.objects = [
-         new Background(backgroundImg, this),
-         new Player(spriteImg, this)
+          new Background(backgroundImg, this),
+          new Player(spriteImg, this)
         ];
       }
       gameLoop() {
@@ -112,7 +95,6 @@ const spriteImg = new Image();
         }
         requestAnimationFrame(this.gameLoop.bind(this));
       }
-      // Initialize and start the game world
       start() {
         this.gameLoop();
       }
@@ -120,3 +102,4 @@ const spriteImg = new Image();
     const world = new GameWorld(backgroundImg, spriteImg);
     world.start();
   }
+</script>
