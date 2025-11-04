@@ -286,3 +286,5 @@ Score: 48/66
 - **Key Concept:** Return min after scanning entire list.  
 - **Approach:** Update min inside loop; return only at end.
  
+ #### Something I Would Like to Share
+ I really enjoyed working with my teammates this trimester to problem solve and code. Despite the many stressful days and nights filled with coding, I shared lots of laughs and had lots of fun with my classmates. I also am very thankful for Aadit and Avantika's help; without them, I would be very lost.
