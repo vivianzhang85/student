@@ -104,6 +104,45 @@ permalink: /student/viviansblog
   }
 </style>
 
+
+<!-- Binary Joke Button (fresh jokes) -->
+<div id="binaryJokeContainer" style="text-align:center; margin-top:20px;">
+  <button id="binaryJokeButton" 
+          style="
+            padding: 12px 24px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border: none;
+            border-radius: 12px;
+            background-color: #00bfff;
+            color: white;
+            box-shadow: 0 0 20px #00bfff, 0 0 40px #00bfff, 0 0 60px #00bfff;
+            transition: 0.3s;
+            font-weight: bold;
+          "
+          onmouseover="this.style.boxShadow='0 0 30px #00ffff, 0 0 60px #00ffff, 0 0 90px #00ffff'; this.style.transform='scale(1.05)';"
+          onmouseout="this.style.boxShadow='0 0 20px #00bfff, 0 0 40px #00bfff, 0 0 60px #00bfff'; this.style.transform='scale(1)';"
+  >
+    Click for a Binary Joke!
+  </button>
+  <div id="binaryJokeText" style="margin-top:15px; font-size:1.2em; max-width:400px; margin-left:auto; margin-right:auto;"></div>
+</div>
+
+<script>
+  const freshBinaryJokes = [
+    "Why did the computer sit in the sun? It wanted to become a hot byte.",
+    "I told a binary joke… but it didn’t get a bit of laughter.",
+    "Why do bits always travel in pairs? Because they can’t handle single life.",
+    "What’s a programmer’s favorite snack? Microchips and dip.",
+    "How do computers eat popcorn? One byte at a time.",
+  ];
+
+  document.getElementById('binaryJokeButton').addEventListener('click', () => {
+    const joke = freshBinaryJokes[Math.floor(Math.random() * freshBinaryJokes.length)];
+    document.getElementById('binaryJokeText').textContent = joke;
+  });
+</script>
+
 ## Vivian Zhang CSP Trimester 1 Final Blog Entry
 
 ### CSP Big Idea 3 Reflection
@@ -122,7 +161,7 @@ I learned how to **write and evaluate mathematical expressions** using operators
 From this lesson, I learned how **strings** work—they group characters into a single value, making them easier to manage and manipulate. This allows programmers to treat a whole sequence of text as one variable.
 
 ### 3.5 – Boolean Expressions (My Lesson!)  
-For this lesson, I actually **helped write and teach the material**. I reflected on my experience with integrating resources, organizing the class flow, and creating an **interactive Jeopardy game** to make learning Boolean logic more engaging. Teaching this topic deepened my understanding of how computers make decisions using true and false values.
+For 3.5, I took the role of a teacher to write and teach the material. I reflected on my experience with integrating resources, organizing the class flow, and creating an **interactive Jeopardy game** to make learning Boolean logic more engaging. Teaching this topic deepened my understanding of how computers make decisions using true and false values. I also had to design homework that both challenged my classmates thinking, and allowed them to effectively apply concepts I taught.
 
 ### 3.6 – Conditionals  
 I enjoyed this lesson and learned a lot about **conditionals**, especially the differences between Python’s `elif` and JavaScript’s `else if`. Conditionals help programs make decisions based on certain conditions being true or false.
@@ -166,7 +205,7 @@ In the beginning, I learned how to use the essential tools of coding like clonin
 This sprint helped me understand the language of programming. I learned the differences in syntax. Switching between JavaScript and Python also taught me how different languages can express similar ideas in slightly different ways. I became more confident reading and writing code, and I started to think like a problem solver instead of just a note-taker.
 
 **West Coast Travel Quest (UI Design Project):**  
-This was the most creative sprints and my personal favorite overall. I loved designing the Travel Module within the West Coast Travel Quest project: a virtual road trip up the West Coast where I applied everything I’d learned to build an interactive user interface. I got to combine coding with creativity by integrating progress bars, buttons, hierarchy, and audio. This sprint helped me see how programming connects to real-world design and how front-end coding can make information both useful and beautiful.
+This was the most creative sprints and my personal favorite overall. Despite our class falling slightly behind during the first few days of planning, we all perserved by calling multiple class meetings filled with pasionate discussion. I enjoyed seeing everyone pitch in their ideas, the discussions that ensued, and coming out with a great overall idea: a roadtrip. I loved designing the Travel Module within the West Coast Travel Quest project: a virtual road trip up the West Coast where I applied everything I’d learned to build an interactive user interface. I got to combine coding with creativity by integrating progress bars, buttons, hierarchy, and audio. While coding the module, we ran into some issues with local storage being difficult to integrate, but after a 2-hour long Cool Collaborators team meeting, we figured it out! This sprint helped me see how programming connects to real-world design and how front-end coding can make information both useful and beautiful. 
 
 Overall, these three sprints connected technical learning with creativity and teamwork. They showed me that computer science isn’t just about writing code — it’s about designing experiences, solving problems, and building something meaningful from the ground up.
 
@@ -326,41 +365,3 @@ Score: 48/66
 
 ### Final Thoughts: Something I Would Like to Share
 I really enjoyed working with my teammates this trimester to problem solve and code. Despite the many stressful days and nights filled with coding, I shared lots of laughs and had lots of fun with my classmates. I also am very thankful for Aadit and Avantika's help; without them, I would be very lost.
-
-<!-- Binary Joke Button (fresh jokes) -->
-<div id="binaryJokeContainer" style="text-align:center; margin-top:20px;">
-  <button id="binaryJokeButton" 
-          style="
-            padding: 12px 24px;
-            font-size: 1.2em;
-            cursor: pointer;
-            border: none;
-            border-radius: 12px;
-            background-color: #00bfff;
-            color: white;
-            box-shadow: 0 0 20px #00bfff, 0 0 40px #00bfff, 0 0 60px #00bfff;
-            transition: 0.3s;
-            font-weight: bold;
-          "
-          onmouseover="this.style.boxShadow='0 0 30px #00ffff, 0 0 60px #00ffff, 0 0 90px #00ffff'; this.style.transform='scale(1.05)';"
-          onmouseout="this.style.boxShadow='0 0 20px #00bfff, 0 0 40px #00bfff, 0 0 60px #00bfff'; this.style.transform='scale(1)';"
-  >
-    Click for a Binary Joke!
-  </button>
-  <div id="binaryJokeText" style="margin-top:15px; font-size:1.2em; max-width:400px; margin-left:auto; margin-right:auto;"></div>
-</div>
-
-<script>
-  const freshBinaryJokes = [
-    "Why did the computer sit in the sun? It wanted to become a hot byte.",
-    "I told a binary joke… but it didn’t get a bit of laughter.",
-    "Why do bits always travel in pairs? Because they can’t handle single life.",
-    "What’s a programmer’s favorite snack? Microchips and dip.",
-    "How do computers eat popcorn? One byte at a time.",
-  ];
-
-  document.getElementById('binaryJokeButton').addEventListener('click', () => {
-    const joke = freshBinaryJokes[Math.floor(Math.random() * freshBinaryJokes.length)];
-    document.getElementById('binaryJokeText').textContent = joke;
-  });
-</script>
