@@ -154,19 +154,19 @@ This lesson was confusing but also engaging. I appreciated the detailed explanat
 ---
 
 ### Compare Yourself to the Beginning of the Year
-At the beginning of the year, I felt uncertain about how coding really worked. I understood the basic idea of writing code, but I didn’t always know *why* certain things were written a specific way. Concepts like algorithms, loops, and conditionals seemed confusing and abstract. Now, after going through Big Idea 3, I’ve noticed a big change in how I think. I’ve become more confident, organized, and logical when solving problems. I can read code and actually understand what it’s doing, and I can write my own programs that work efficiently. I’ve also learned to be more patient when debugging and to see mistakes as part of the learning process. Compared to the start of the year, I feel more like a real programmer who can take on challenges step by step.
+At the beginning of the year, I felt uncertain about how coding really worked. Concepts like algorithms, loops, and conditionals seemed confusing and abstract. Now, after going through Big Idea 3, I’ve noticed a big change in how I think. I’ve become more confident, organized, and logical when solving problems. I’ve also learned to be more patient when debugging and to see mistakes as part of the learning process. Compared to the start of the year, I feel more like a real programmer and a better team player who can take on challenges step by step. Moreover, as my team's scrum master, I've learned a lot about leadership, how to communicate most effectively with my team, and how to keep us all on pace.
 
 ---
 
 ### Remembering Key Things from Tools, Fundamentals of JavaScript/Python, West Coast Quest
 **Tools:**  
-In the beginning, I learned how to use the essential tools of coding — like Replit, GitHub, and VS Code — to write, test, and organize my programs. At first, all the commands and file structures felt overwhelming, but over time I realized how these tools make collaboration, debugging, and project management much easier. This sprint built my foundation and made me feel more comfortable in a real coding environment.
+In the beginning, I learned how to use the essential tools of coding like cloning repositories, navigating VSCode, localhost servers, and basic commads like cd. At first, all the commands felt overwhelming, but over time I realized how these tools work together to help me in debugging and project management. This sprint built my foundation and made me feel more comfortable in a real coding environment.
 
 **Fundamentals of JavaScript and Python:**  
-This sprint helped me understand the *language* of programming. I learned how syntax, loops, conditionals, and functions all work together to form logic. Switching between JavaScript and Python also taught me how different languages can express similar ideas in slightly different ways. I became more confident reading and writing code, and I started to think like a problem solver instead of just a note-taker.
+This sprint helped me understand the language of programming. I learned the differences in syntax. Switching between JavaScript and Python also taught me how different languages can express similar ideas in slightly different ways. I became more confident reading and writing code, and I started to think like a problem solver instead of just a note-taker.
 
 **West Coast Travel Quest (UI Design Project):**  
-This was one of the most creative sprints. I loved designing the *West Coast Travel Quest* project — a virtual road trip up the West Coast where I applied everything I’d learned to build an interactive user interface. I got to combine coding with creativity by designing layouts, buttons, and user experiences. This sprint helped me see how programming connects to real-world design and how front-end coding can make information both useful and beautiful.
+This was the most creative sprints and my personal favorite overall. I loved designing the Travel Module within the West Coast Travel Quest project: a virtual road trip up the West Coast where I applied everything I’d learned to build an interactive user interface. I got to combine coding with creativity by integrating progress bars, buttons, hierarchy, and audio. This sprint helped me see how programming connects to real-world design and how front-end coding can make information both useful and beautiful.
 
 Overall, these three sprints connected technical learning with creativity and teamwork. They showed me that computer science isn’t just about writing code — it’s about designing experiences, solving problems, and building something meaningful from the ground up.
 
@@ -207,7 +207,7 @@ carousel.querySelector('.next').onclick = () => {
 
 ---
 ### What I Want to Learn Next in Computer Science
-Next, I want to learn **data science** and explore how data can reveal hidden patterns and insights. I’m excited to use tools like **Python**, **pandas**, and visualization libraries to turn large datasets into clear, meaningful information. Learning data science will let me combine coding with real-world problem-solving to create programs that are both **smart and impactful**.
+Next, I want to learn **data science** and explore how data can reveal hidden patterns and insights. I’m want to learn more about tools like pandas, modeling, and visualization libraries to turn large datasets into clear, meaningful information. Learning data science will let me combine coding with real-world problem-solving to create programs that are both smart and impactful.
 
 ---
 
@@ -356,9 +356,7 @@ I really enjoyed working with my teammates this trimester to problem solve and c
     "I told a binary joke… but it didn’t get a bit of laughter.",
     "Why do bits always travel in pairs? Because they can’t handle single life.",
     "What’s a programmer’s favorite snack? Microchips and dip.",
-    "Why did the bit break up with the byte? It needed more space.",
     "How do computers eat popcorn? One byte at a time.",
-    "Why did the binary number go to school? To improve its logic."
   ];
 
   document.getElementById('binaryJokeButton').addEventListener('click', () => {
