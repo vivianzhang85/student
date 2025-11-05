@@ -146,7 +146,7 @@ permalink: /student/viviansblog
 ## Vivian Zhang CSP Trimester 1 Final Blog Entry
 
 ### CSP Big Idea 3 Reflection
-Throughout **Big Idea 3**, I learned how data and algorithms form the foundation of computer science. Each lesson built on the last, helping me see how information can be represented, processed, and used efficiently in code. From variables to loops, every concept showed me how to think more like a programmer and make my code more powerful and organized.
+Throughout **Big Idea 3**, I learned how data and algorithms form the foundation of computer science. Each lesson built on the last, helping me see how information can be represented, processed, and used efficiently in code. From variables to loops, every concept showed me how to think more like a programmer and make my code more organized.
 
 ### 3.1 – Variables and Assignments  
 From this lesson, I learned that **variables** are used to store information. Using variables and assignments helps organize your code and makes it easier to read, update, and reuse.
@@ -187,7 +187,7 @@ In this lesson, I learned to **create procedures** to perform specific tasks in 
 ### 3.15 – Random Values  
 This lesson reinforced how **randomness** can make programs more dynamic and realistic. I practiced generating random input to produce different outcomes each time the code runs.
 
-### 3.17 – Efficiency and Understanding  
+### 3.17 – Algorithmic Efficiency  
 This lesson was confusing but also engaging. I appreciated the detailed explanations from the instructors and came away with a stronger understanding of how to make my code more efficient and straightforward.
 
 ---
