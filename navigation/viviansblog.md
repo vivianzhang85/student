@@ -104,10 +104,10 @@ permalink: /student/viviansblog
   }
 </style>
 
-## CSP Big Idea 3: Data and Algorithms Reflection
-Throughout **Big Idea 3**, I learned how data and algorithms form the foundation of computer science. Each lesson built on the last, helping me see how information can be represented, processed, and used efficiently in code. From variables to loops, every concept showed me how to think more like a programmer and make my code more powerful and organized.
+## Vivian Zhang CSP Trimester 1 Final Blog Entry
 
----
+### CSP Big Idea 3 Reflection
+Throughout **Big Idea 3**, I learned how data and algorithms form the foundation of computer science. Each lesson built on the last, helping me see how information can be represented, processed, and used efficiently in code. From variables to loops, every concept showed me how to think more like a programmer and make my code more powerful and organized.
 
 ### 3.1 – Variables and Assignments  
 From this lesson, I learned that **variables** are used to store information. Using variables and assignments helps organize your code and makes it easier to read, update, and reuse.
@@ -153,10 +153,12 @@ This lesson was confusing but also engaging. I appreciated the detailed explanat
 
 ---
 
-### 1. Compare Yourself to the Beginning of the Year
+### Compare Yourself to the Beginning of the Year
 At the beginning of the year, I felt uncertain about how coding really worked. I understood the basic idea of writing code, but I didn’t always know *why* certain things were written a specific way. Concepts like algorithms, loops, and conditionals seemed confusing and abstract. Now, after going through Big Idea 3, I’ve noticed a big change in how I think. I’ve become more confident, organized, and logical when solving problems. I can read code and actually understand what it’s doing, and I can write my own programs that work efficiently. I’ve also learned to be more patient when debugging and to see mistakes as part of the learning process. Compared to the start of the year, I feel more like a real programmer who can take on challenges step by step.
 
-### 2. Remembering Key Things from Tools, Fundamentals of JavaScript/Python, West Coast Quest
+---
+
+### Remembering Key Things from Tools, Fundamentals of JavaScript/Python, West Coast Quest
 **Tools:**  
 In the beginning, I learned how to use the essential tools of coding — like Replit, GitHub, and VS Code — to write, test, and organize my programs. At first, all the commands and file structures felt overwhelming, but over time I realized how these tools make collaboration, debugging, and project management much easier. This sprint built my foundation and made me feel more comfortable in a real coding environment.
 
@@ -171,12 +173,46 @@ Overall, these three sprints connected technical learning with creativity and te
 ### Night at the Museum Reflection
 Our **Night at the Museum** event went really well! My parents came, and it was exciting to share what I’ve been working on in computer science. There were a lot of people walking around, and I got to explain my project and the coding behind it — especially how I built the **progress bar** feature. It felt good to see others interested in my work and to realize how much I’ve
 
+
+<div id="photo-carousel" class="carousel" style="max-width:400px; margin: 20px auto; position:relative; text-align:center;">
+  <img src="../media/assets/IMG_7600.png" alt="Image 1" style="width:100%; height:300px; object-fit:cover; display:block; border-radius:12px;">
+  <img src="../media/assets/IMG_7609.png" alt="Image 2" style="width:100%; height:300px; object-fit:cover; display:none; border-radius:12px;">
+  <img src="../media/assets/IMG_7608.png" alt="Image 3" style="width:100%; height:300px; object-fit:cover; display:none; border-radius:12px;">
+
+  <button class="prev" style="position:absolute; top:50%; left:10px; transform:translateY(-50%); background:rgba(0,0,0,0.4); border:none; color:white; font-size:1.8em; cursor:pointer; border-radius:50%; width:35px; height:35px;">❮</button>
+  <button class="next" style="position:absolute; top:50%; right:10px; transform:translateY(-50%); background:rgba(0,0,0,0.4); border:none; color:white; font-size:1.8em; cursor:pointer; border-radius:50%; width:35px; height:35px;">❯</button>
+
+  <p style="margin-top:10px; font-style:italic; color:white;">The Collaborators at The Night at the Museum!</p>
+</div>
+
+<script>
+const carousel = document.getElementById('photo-carousel');
+const images = carousel.querySelectorAll('img');
+let index = 0;
+
+function showImage(i) {
+  images.forEach((img, n) => img.style.display = (n === i) ? 'block' : 'none');
+}
+
+carousel.querySelector('.prev').onclick = () => {
+  index = (index - 1 + images.length) % images.length;
+  showImage(index);
+};
+
+carousel.querySelector('.next').onclick = () => {
+  index = (index + 1) % images.length;
+  showImage(index);
+};
+</script>
+
+---
 ### What I Want to Learn Next in Computer Science
 Next, I want to learn **data science** and explore how data can reveal hidden patterns and insights. I’m excited to use tools like **Python**, **pandas**, and visualization libraries to turn large datasets into clear, meaningful information. Learning data science will let me combine coding with real-world problem-solving to create programs that are both **smart and impactful**.
 
-### 66 Question MC Review
+---
 
-## Overview
+### 66 Question MC Review
+### Overview
 Score: 48/66
 ### Q6 – Internet Engineering Task Force (IETF)
 - **Your Answer:** C  
@@ -286,5 +322,47 @@ Score: 48/66
 - **Key Concept:** Return min after scanning entire list.  
 - **Approach:** Update min inside loop; return only at end.
  
-#### Something I Would Like to Share
+ ---
+
+### Final Thoughts: Something I Would Like to Share
 I really enjoyed working with my teammates this trimester to problem solve and code. Despite the many stressful days and nights filled with coding, I shared lots of laughs and had lots of fun with my classmates. I also am very thankful for Aadit and Avantika's help; without them, I would be very lost.
+
+<!-- Binary Joke Button (fresh jokes) -->
+<div id="binaryJokeContainer" style="text-align:center; margin-top:20px;">
+  <button id="binaryJokeButton" 
+          style="
+            padding: 12px 24px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border: none;
+            border-radius: 12px;
+            background-color: #00bfff;
+            color: white;
+            box-shadow: 0 0 20px #00bfff, 0 0 40px #00bfff, 0 0 60px #00bfff;
+            transition: 0.3s;
+            font-weight: bold;
+          "
+          onmouseover="this.style.boxShadow='0 0 30px #00ffff, 0 0 60px #00ffff, 0 0 90px #00ffff'; this.style.transform='scale(1.05)';"
+          onmouseout="this.style.boxShadow='0 0 20px #00bfff, 0 0 40px #00bfff, 0 0 60px #00bfff'; this.style.transform='scale(1)';"
+  >
+    Click for a Binary Joke!
+  </button>
+  <div id="binaryJokeText" style="margin-top:15px; font-size:1.2em; max-width:400px; margin-left:auto; margin-right:auto;"></div>
+</div>
+
+<script>
+  const freshBinaryJokes = [
+    "Why did the computer sit in the sun? It wanted to become a hot byte.",
+    "I told a binary joke… but it didn’t get a bit of laughter.",
+    "Why do bits always travel in pairs? Because they can’t handle single life.",
+    "What’s a programmer’s favorite snack? Microchips and dip.",
+    "Why did the bit break up with the byte? It needed more space.",
+    "How do computers eat popcorn? One byte at a time.",
+    "Why did the binary number go to school? To improve its logic."
+  ];
+
+  document.getElementById('binaryJokeButton').addEventListener('click', () => {
+    const joke = freshBinaryJokes[Math.floor(Math.random() * freshBinaryJokes.length)];
+    document.getElementById('binaryJokeText').textContent = joke;
+  });
+</script>
