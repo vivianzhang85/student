@@ -164,3 +164,34 @@ def process_mermaid_cells(notebook):
 
 if __name__ == "__main__":
     convert_notebooks()
+
+import os
+import nbformat
+from nbformat.reader import NotJSONError
+
+def safe_convert_notebook(notebook_file):
+    # Skip if file is empty
+    if os.path.getsize(notebook_file) == 0:
+        print(f"Skipping empty notebook: {notebook_file}")
+        return
+
+    try:
+        # Try reading the notebook
+        notebook = nbformat.read(notebook_file, as_version=4)
+    except NotJSONError:
+        print(f"Skipping invalid/corrupted notebook: {notebook_file}")
+        return
+    except Exception as e:
+        print(f"Skipping notebook due to unexpected error: {notebook_file}\nError: {e}")
+        return
+
+    # Skip if notebook has no cells
+    if not notebook.cells or len(notebook.cells) == 0:
+        print(f"Skipping notebook with no cells: {notebook_file}")
+        return
+
+    # Optional: normalize notebook to fix missing IDs
+    nbformat.normalize(notebook)
+
+    # Call your original conversion function here
+    convert_notebook_to_markdown_with_front_matter(notebook_file, notebook)

@@ -1,0 +1,513 @@
+---
+layout: post
+title: "Step 3 Landmarks"
+description: "Let's see the sights of the big apple!"
+permalink: /viviancode/
+---
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC Landmarks Itinerary - College Board Create PT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .landmark-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .landmark-card:hover {
+            transform: translateX(5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .landmark-info h3 {
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .landmark-info p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .selected {
+            background: rgba(102, 126, 234, 0.3);
+            border: 2px solid #667eea;
+        }
+
+        .itinerary-display {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+            min-height: 100px;
+        }
+
+        .itinerary-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .status {
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .status-open {
+            background: #2ecc71;
+            color: white;
+        }
+
+        .status-closed {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #ffd700;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .response-log {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .log-entry {
+            padding: 5px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .log-success {
+            color: #2ecc71;
+        }
+
+        .log-error {
+            color: #e74c3c;
+        }
+
+        .log-info {
+            color: #3498db;
+        }
+
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .controls {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🗽 NYC Landmarks Itinerary Tracker</h1>
+        <p style="text-align: center; margin-bottom: 30px; color: rgba(255, 255, 255, 0.8);">
+            College Board Create PT Project - Demonstrates API Integration with List Data Structure
+        </p>
+
+        <!-- Input Section -->
+        <div class="section">
+            <h2>Select Landmarks</h2>
+            <div id="landmarks-list">
+                <!-- Landmarks will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Itinerary Display Section -->
+        <div class="section">
+            <h2>Your Itinerary</h2>
+            <div id="itinerary-display" class="itinerary-display">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading itinerary...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls Section -->
+        <div class="section">
+            <h2>Controls & Procedures</h2>
+            <div class="controls">
+                <button onclick="loadItinerary()">🔄 Refresh Itinerary</button>
+                <button onclick="calculateSchedule()">📅 Calculate Schedule</button>
+                <button onclick="clearItinerary()">🗑️ Clear All</button>
+                <button onclick="testAPI()">🔌 Test API Connection</button>
+            </div>
+        </div>
+
+        <!-- Response Log Section -->
+        <div class="section">
+            <h2>API Response Log</h2>
+            <div id="response-log" class="response-log">
+                <!-- Log entries will appear here -->
+            </div>
+        </div>
+
+        <!-- Information Panel -->
+        <div class="section">
+            <h2>College Board Requirements Met</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                <div>
+                    <h3 style="color: #ffd700;">✓ Input/Output</h3>
+                    <p>User selects landmarks → API processes → Displays itinerary</p>
+                </div>
+                <div>
+                    <h3 style="color: #ffd700;">✓ List Data Structure</h3>
+                    <p>Backend stores landmarks in a Python list with full CRUD operations</p>
+                </div>
+                <div>
+                    <h3 style="color: #ffd700;">✓ POST Requests</h3>
+                    <p>Uses POST to add landmarks and calculate schedules</p>
+                </div>
+                <div>
+                    <h3 style="color: #ffd700;">✓ Procedures</h3>
+                    <p>Four main procedures demonstrating algorithm implementation</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import API_CONFIG from './api-config.js';
+
+        // Initialize application
+        class NYCItineraryApp {
+            constructor() {
+                this.selectedLandmarks = new Set();
+                this.itineraryData = null;
+                this.init();
+            }
+
+            async init() {
+                this.log('info', 'Initializing NYC Landmarks Itinerary App');
+                this.loadLandmarks();
+                await this.loadItinerary();
+                this.testAPI();
+            }
+
+            loadLandmarks() {
+                const landmarksList = document.getElementById('landmarks-list');
+                const landmarks = Object.keys(API_CONFIG.landmarkDetails);
+
+                landmarks.forEach(landmarkName => {
+                    const details = API_CONFIG.landmarkDetails[landmarkName];
+                    const card = document.createElement('div');
+                    card.className = 'landmark-card';
+                    card.innerHTML = `
+                        <div class="landmark-info">
+                            <h3>${landmarkName}</h3>
+                            <p>📍 ${details.location} • 🕐 ${details.hours} • 💰 ${details.price}</p>
+                        </div>
+                        <button onclick="app.selectLandmark('${landmarkName}', this)">+ Add</button>
+                    `;
+                    landmarksList.appendChild(card);
+                });
+
+                this.log('success', `Loaded ${landmarks.length} landmarks`);
+            }
+
+            async selectLandmark(landmarkName, button) {
+                try {
+                    button.disabled = true;
+                    button.textContent = 'Adding...';
+
+                    const result = await API_CONFIG.procedures.saveLandmarkToItinerary(landmarkName);
+                    
+                    if (result.success) {
+                        button.textContent = '✓ Added';
+                        button.classList.add('selected');
+                        this.selectedLandmarks.add(landmarkName);
+                        this.log('success', result.message);
+                        await this.loadItinerary();
+                    } else {
+                        button.textContent = '+ Add';
+                        button.disabled = false;
+                        this.log('error', result.error);
+                    }
+                } catch (error) {
+                    button.textContent = '+ Add';
+                    button.disabled = false;
+                    this.log('error', `Error: ${error.message}`);
+                }
+            }
+
+            async loadItinerary() {
+                try {
+                    const result = await API_CONFIG.procedures.getCompleteItinerary();
+                    
+                    if (result.success) {
+                        this.itineraryData = result.data;
+                        this.displayItinerary(result.data, result.statistics);
+                        this.log('success', 'Itinerary loaded successfully');
+                    } else {
+                        this.log('error', result.error);
+                    }
+                } catch (error) {
+                    this.log('error', `Failed to load itinerary: ${error.message}`);
+                }
+            }
+
+            displayItinerary(itinerary, stats) {
+                const display = document.getElementById('itinerary-display');
+                
+                if (!itinerary.landmarks || itinerary.landmarks.length === 0) {
+                    display.innerHTML = '<p style="text-align: center; padding: 20px;">No landmarks selected yet. Add some above!</p>';
+                    return;
+                }
+
+                let html = `
+                    <div style="margin-bottom: 15px;">
+                        <p>📊 Statistics: ${stats.total_landmarks} landmarks across ${stats.types_count} categories</p>
+                        <p>🕐 Last updated: ${new Date(stats.last_updated).toLocaleString()}</p>
+                    </div>
+                `;
+
+                itinerary.landmarks.forEach(landmark => {
+                    html += `
+                        <div class="itinerary-item">
+                            <div>
+                                <strong>${landmark.name}</strong>
+                                <div style="font-size: 0.9rem; opacity: 0.8;">
+                                    📍 ${landmark.location} • 🕐 ${landmark.hours}
+                                </div>
+                            </div>
+                            <div class="status ${landmark.type === 'museum' ? 'status-open' : 'status-closed'}">
+                                ${landmark.type}
+                            </div>
+                        </div>
+                    `;
+                });
+
+                display.innerHTML = html;
+            }
+
+            async calculateSchedule() {
+                if (this.selectedLandmarks.size === 0) {
+                    this.log('error', 'Please select at least one landmark first');
+                    return;
+                }
+
+                try {
+                    this.log('info', 'Calculating optimal schedule...');
+                    const result = await API_CONFIG.procedures.calculateOptimalSchedule(
+                        Array.from(this.selectedLandmarks),
+                        ['Friday', 'Saturday', 'Sunday']
+                    );
+
+                    if (result.success) {
+                        this.displaySchedule(result.data, result.formatted_schedule, result.recommendations);
+                        this.log('success', 'Schedule calculated successfully');
+                    } else {
+                        this.log('error', result.error);
+                    }
+                } catch (error) {
+                    this.log('error', `Schedule calculation failed: ${error.message}`);
+                }
+            }
+
+            displaySchedule(scheduleData, formattedSchedule, recommendations) {
+                const display = document.getElementById('itinerary-display');
+                let html = '<h3>📅 Optimized Schedule</h3>';
+
+                formattedSchedule.forEach(day => {
+                    if (day.activities.length > 0) {
+                        html += `<p><strong>${day.day}:</strong></p>`;
+                        day.activities.forEach(activity => {
+                            html += `<p style="margin-left: 20px;">• ${activity}</p>`;
+                        });
+                    }
+                });
+
+                if (recommendations.length > 0) {
+                    html += '<h3 style="margin-top: 20px;">💡 Recommendations</h3>';
+                    recommendations.forEach(rec => {
+                        html += `<p>• ${rec}</p>`;
+                    });
+                }
+
+                display.innerHTML = html;
+            }
+
+            async clearItinerary() {
+                if (confirm('Are you sure you want to clear your itinerary?')) {
+                    try {
+                        const response = await fetch(`${API_CONFIG.pythonURI}/api/itinerary/clear`, {
+                            method: 'DELETE',
+                            ...API_CONFIG.fetchOptions
+                        });
+
+                        const data = await response.json();
+
+                        if (data.success) {
+                            this.selectedLandmarks.clear();
+                            this.loadItinerary();
+                            this.log('success', 'Itinerary cleared successfully');
+                            
+                            // Reset all buttons
+                            document.querySelectorAll('.landmark-card button').forEach(button => {
+                                button.disabled = false;
+                                button.textContent = '+ Add';
+                                button.classList.remove('selected');
+                            });
+                        } else {
+                            this.log('error', data.message || 'Failed to clear itinerary');
+                        }
+                    } catch (error) {
+                        this.log('error', `Error clearing itinerary: ${error.message}`);
+                    }
+                }
+            }
+
+            async testAPI() {
+                try {
+                    const response = await fetch(`${API_CONFIG.pythonURI}/api/test`);
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        this.log('success', `API connected: ${data.message} (${new Date(data.timestamp).toLocaleTimeString()})`);
+                    } else {
+                        this.log('error', 'API test failed');
+                    }
+                } catch (error) {
+                    this.log('error', `API connection failed: ${error.message}. Make sure server.py is running on port 5000.`);
+                }
+            }
+
+            log(type, message) {
+                const logDiv = document.getElementById('response-log');
+                const entry = document.createElement('div');
+                entry.className = `log-entry log-${type}`;
+                entry.innerHTML = `[${new Date().toLocaleTimeString()}] ${message}`;
+                
+                logDiv.insertBefore(entry, logDiv.firstChild);
+                
+                // Keep log manageable
+                if (logDiv.children.length > 10) {
+                    logDiv.removeChild(logDiv.lastChild);
+                }
+            }
+        }
+
+        // Initialize and expose app
+        const app = new NYCItineraryApp();
+        window.app = app;
+
+        // Make functions available globally
+        window.loadItinerary = () => app.loadItinerary();
+        window.calculateSchedule = () => app.calculateSchedule();
+        window.clearItinerary = () => app.clearItinerary();
+        window.testAPI = () => app.testAPI();
+    </script>
+</body>
+</html>
